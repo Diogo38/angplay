@@ -1,0 +1,26 @@
+<p>This is a one of the POSTS:</p>
+
+<form [formGroup]="postForm" (ngModule)="onSubmit()">
+<!--form-->
+    <label>
+        UserId:
+        <input type="number" formControlName="userid">
+    </label>
+    <br>
+    <label>
+        id:
+        <input type="number" formControlName="id">
+    </label>
+    <br>
+    <label>
+        Title
+        <input type="text" formControlName="title">
+    </label>
+    <br>
+    <label>
+        Body:
+        <input type="text" formControlName="body">
+    </label>
+    <br>
+    <button type="submit" [disabled]="!postForm.valid" (click)='onSubmit()'> Submit</button>
+</form>

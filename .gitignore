@@ -1,1 +1,4 @@
 ./angular-tour-of-heroes/node_modules
+./reactive-form/node_modules
+./user-input/node_modules
+./crudapp/node_modules

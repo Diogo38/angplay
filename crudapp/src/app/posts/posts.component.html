@@ -1,0 +1,28 @@
+<p>posts works!</p>
+
+<p> This will list all the post</p>
+
+<table style="width:100%">
+
+
+    <tr>
+        <th>userId</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+        <th>operation</th>
+    </tr>
+    <tr *ngFor="let post of posts">
+        <th>{{post.userId}}</th>
+        <th>{{post.id}}</th>
+        <th>{{post.title}}</th>
+        <th>{{post.body}}</th>
+        <th><button type="button" (click)='clickedButton(post.id)'>Click Me!</button> </th>
+        <!--a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
+        <button class="delete" title="delete hero" (click)="delete(hero)">x</button-->
+    </tr>
+</table>
+
+<button type="button" routerLink="/post" routerLinkActive="active"> New User </button>
