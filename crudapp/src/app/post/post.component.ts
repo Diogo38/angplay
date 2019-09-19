@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'; 
+import { Router, ActivatedRoute} from '@angular/router';
+import { PostApiService } from '../post-api.service';
+import { Post } from 'src/modules/Post';
 
 @Component({
   selector: 'app-post',
@@ -8,7 +11,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private posts: PostApiService) {}
 
   ngOnInit() {
   }
@@ -20,7 +25,12 @@ export class PostComponent implements OnInit {
     body: new FormControl()
   });
 
-  onSubmit(){
+  onSubmit(post: Post){
+    console.log(this.router);
+    this.posts.add(this.postForm.value);
+    this.router.navigate(['posts']);
     console.log(this.postForm.value);
+    //this.router.navigate(['posts']);
   }
+
 }
